@@ -10,6 +10,14 @@ namespace Entidades
     {
         private double numero;
 
+        public string Numero
+        {
+            set
+            {
+                numero = ValidarOperando(value);
+            }
+        }
+
         public Operando()
         {
             this.numero = 0;
@@ -27,18 +35,10 @@ namespace Entidades
 
         private double ValidarOperando(string strNumero)
         {
-            double validacion;
-            validacion = 1;
-            foreach(char c in strNumero)
+            double numero;
+            if(double.TryParse(strNumero, out numero))
             {
-                if(c<='0' && c >= '9')
-                {
-                    validacion = 0;
-                }
-            }
-            if(validacion != 0)
-            {
-                return Convert.ToDouble(strNumero);
+                return numero;
             }
 
             return 0;

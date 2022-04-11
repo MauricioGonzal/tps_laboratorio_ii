@@ -15,10 +15,28 @@ namespace Entidades
 
         public static double Operar(Operando num1, Operando num2, char operador)
         {
-            if (ValidarOperador(operador))
-            {
+            double resultado;
 
+            switch (ValidarOperador(operador))
+            {
+                case '-':
+                    resultado = num1 - num2;
+                    break;
+                case '/':
+                    resultado= num1 / num2;
+                    break;
+                case '*':
+                    resultado= num1 * num2;
+                    break;
+                default:
+                    resultado = num1 + num2;
+                    break;
             }
+
+            return resultado;
+            
+
+            
         }
         
     }
