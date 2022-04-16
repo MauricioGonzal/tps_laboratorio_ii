@@ -10,6 +10,10 @@ namespace Entidades
     {
         private double numero;
 
+        /// <summary>
+        /// cambia el atributo numero que se recibe como string en 
+        /// un valor de tipo double que sea valido para operar
+        /// </summary>
         public string Numero
         {
             set
@@ -49,13 +53,14 @@ namespace Entidades
 
         private bool EsBinario(string binario)
         {
-            for(int i = 0; i<binario.Length; i++)
+            foreach (char caracter in binario)
             {
-                if(binario[i]!='0' || binario[i] != '1')
+                if (caracter != '0' && caracter != '1')
                 {
                     return false;
                 }
             }
+            
 
             return true;
         }
