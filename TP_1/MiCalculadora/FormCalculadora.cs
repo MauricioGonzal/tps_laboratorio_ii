@@ -61,7 +61,7 @@ namespace MiCalculadora
         }
 
         /// <summary>
-        /// al hacer click en Operar se realiza la operacion y se coloca el resultado y la operacion en el formulario
+        /// al hacer click en Operar se realiza la operacion, se coloca el resultado y la operacion (validando algunos posibles problemas con los datos ingresados) en el formulario
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -91,15 +91,21 @@ namespace MiCalculadora
                 operando2 = "0";
             }
 
-            resultado= Operar(operando1, operando2, operador);
-
             if (operando2.StartsWith('-'))
             {
                 operando2 = $"({operando2})";
             }
-            this.lblResultado.Text = resultado.ToString();
-            this.lstOperaciones.Items.Add($"{operando1} {operador} {operando2} = {resultado}");
 
+            if (operando2=="0" && operador == "/")
+            {
+                this.lblResultado.Text = "ERROR";
+            }
+            else 
+            {
+                resultado = Operar(operando1, operando2, operador);
+                this.lblResultado.Text = resultado.ToString();
+                this.lstOperaciones.Items.Add($"{operando1} {operador} {operando2} = {resultado}");
+            }
 
         }
 
@@ -147,9 +153,6 @@ namespace MiCalculadora
                 
             }
 
-           
-
-            
         }
 
 
@@ -163,6 +166,7 @@ namespace MiCalculadora
             string mensaje = "Esta seguro de querer salir?";
             string titulo = "Salir";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
             if (MessageBox.Show(mensaje, titulo, buttons, MessageBoxIcon.Question) == DialogResult.No)
             {
                 e.Cancel = true;
@@ -177,6 +181,7 @@ namespace MiCalculadora
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
             string resultado= this.lblResultado.Text;
+
             if(string.IsNullOrEmpty(resultado))
             {
                 this.lblResultado.Text = "Debe existir un resultado para realizar la operacion";

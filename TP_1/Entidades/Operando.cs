@@ -82,7 +82,6 @@ namespace Entidades
                 }
             }
             
-
             return true;
         }
 
@@ -127,6 +126,7 @@ namespace Entidades
         public string DecimalBinario(string numero)
         {
             double datoNumerico;
+
             if(double.TryParse(numero, out datoNumerico))
             {
                 return DecimalBinario(datoNumerico);
@@ -134,7 +134,6 @@ namespace Entidades
 
             return "Valor Invalido";
 
-            
         }
 
         public static double operator -(Operando n1, Operando n2)

@@ -139,10 +139,10 @@
             // 
             this.lblResultado.Location = new System.Drawing.Point(103, 21);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblResultado.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblResultado.Size = new System.Drawing.Size(279, 15);
             this.lblResultado.TabIndex = 0;
-            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FormCalculadora
             // 
