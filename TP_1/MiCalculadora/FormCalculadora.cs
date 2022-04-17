@@ -103,6 +103,7 @@ namespace MiCalculadora
             else 
             {
                 resultado = Operar(operando1, operando2, operador);
+                resultado = Math.Round(resultado, 3);
                 this.lblResultado.Text = resultado.ToString();
                 this.lstOperaciones.Items.Add($"{operando1} {operador} {operando2} = {resultado}");
             }
