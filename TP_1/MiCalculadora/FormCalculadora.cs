@@ -61,7 +61,7 @@ namespace MiCalculadora
         }
 
         /// <summary>
-        /// 
+        /// al hacer click en Operar se realiza la operacion y se coloca el resultado y la operacion en el formulario
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -104,19 +104,33 @@ namespace MiCalculadora
         }
 
 
-
+        /// <summary>
+        /// Al hacer click en Limpiar se limpia el form invocando al metodo Limpiar()
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.Limpiar();
 
         }
 
+        /// <summary>
+        /// Al hacer click en Cerrar se cierra el formulario llevando a cabo el metodo de salida aplicado en el metodo FormClosing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {   
                this.Close();
             
         }
 
+        /// <summary>
+        /// Al hacer click en Convertir a Binario se verifica si existe un resultado para trabajar, y si existe se asigna al espacio resultado convertido a binario si es posible
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConvertirABinario_Click(object sender, EventArgs e)
         {
             string resultadoStr = this.lblResultado.Text;
@@ -131,9 +145,6 @@ namespace MiCalculadora
                 Operando operando = new Operando(resultadoStr);
                 this.lblResultado.Text = operando.DecimalBinario(resultadoStr);
                 
-                 
-                
-               
             }
 
            
@@ -142,7 +153,11 @@ namespace MiCalculadora
         }
 
 
-
+        /// <summary>
+        /// metodo de salida del formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             string mensaje = "Esta seguro de querer salir?";
@@ -154,6 +169,11 @@ namespace MiCalculadora
             }
         }
 
+        /// <summary>
+        /// Al hacer click en Convertir a Decimal se verifica si existe un resultado para trabajar, y si existe se asigna al espacio resultado convertido a decimal si es posible
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
             string resultado= this.lblResultado.Text;

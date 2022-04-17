@@ -113,6 +113,7 @@
             // 
             this.txtNumero1.Location = new System.Drawing.Point(12, 82);
             this.txtNumero1.Name = "txtNumero1";
+            this.txtNumero1.PlaceholderText = "Operando Nro. 1";
             this.txtNumero1.Size = new System.Drawing.Size(118, 23);
             this.txtNumero1.TabIndex = 1;
             // 
@@ -120,6 +121,7 @@
             // 
             this.txtNumero2.Location = new System.Drawing.Point(312, 82);
             this.txtNumero2.Name = "txtNumero2";
+            this.txtNumero2.PlaceholderText = "Operando Nro. 2";
             this.txtNumero2.Size = new System.Drawing.Size(116, 23);
             this.txtNumero2.TabIndex = 3;
             // 

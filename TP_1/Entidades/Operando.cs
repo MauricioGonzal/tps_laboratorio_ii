@@ -22,21 +22,37 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// constructor que asigna el valor 0 al atributo numero
+        /// </summary>
         public Operando(): this(0)
         {
             
         }
 
+        /// <summary>
+        /// asigna el valor recibido al atributo numero
+        /// </summary>
+        /// <param name="numero">dato en formato double</param>
         public Operando(double numero)
         {
             this.numero = numero;
         }
 
+        /// <summary>
+        /// asigna el valor recibido al atributo numero usando la propiedad Numero
+        /// </summary>
+        /// <param name="numero"> dato en formato string</param>
         public Operando (string numero)
         {
              this.Numero= numero;
         }
 
+        /// <summary>
+        /// Comprueba que el valor recibido es numérico, y lo retorna en formato double. Caso contrario, retorna 0
+        /// </summary>
+        /// <param name="strNumero">numero en formato string</param>
+        /// <returns>retorna el numero convertido a tipo de dato double si es posible, sino retorna 0</returns>
         private double ValidarOperando(string strNumero)
         {
             double numero;
@@ -51,6 +67,11 @@ namespace Entidades
             
         }
 
+        /// <summary>
+        /// comprueba si el dato esta o no compuesto por 1 y 0
+        /// </summary>
+        /// <param name="binario"> dato a verificar en formato string</param>
+        /// <returns>true si el dato es binario</returns>
         private bool EsBinario(string binario)
         {
             foreach (char caracter in binario)
@@ -65,6 +86,11 @@ namespace Entidades
             return true;
         }
 
+        /// <summary>
+        /// convierte el resultado a decimal si es posible
+        /// </summary>
+        /// <param name="binario">dato a convertir en formato string</param>
+        /// <returns>devuelve el numero convertido en formato string si la operacion salio de forma exitosa, o retorna "Valor Invalido"</returns>
         public string BinarioDecimal(string binario)
         {
            if(EsBinario(binario)==true)
@@ -75,6 +101,11 @@ namespace Entidades
             return "Valor Invalido";
         }
 
+        /// <summary>
+        /// convierte el resultado a binario si es posible
+        /// </summary>
+        /// <param name="numero">dato a convertir en formato double</param>
+        /// <returns>devuelve el numero convertido en formato string si la operacion salio de forma exitosa, o retorna "Valor Invalido"</returns>
         public string DecimalBinario(double numero)
         {   
             
@@ -88,6 +119,11 @@ namespace Entidades
             return "Valor Invalido";
         }
 
+        /// <summary>
+        /// convierte el resultado a binario si es posible
+        /// </summary>
+        /// <param name="numero">dato a convertir en formato string</param>
+        /// <returns>devuelve el numero convertido en formato string si la operacion salio de forma exitosa, o retorna "Valor Invalido"</returns>
         public string DecimalBinario(string numero)
         {
             double datoNumerico;

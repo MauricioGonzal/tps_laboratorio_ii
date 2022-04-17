@@ -5,7 +5,7 @@ namespace Entidades
     public static class Calculadora
     {
         /// <summary>
-        /// verifica si el operador esta dentro de las opciones, sino retorna +
+        /// valida que el operador recibido sea +, -, / o *. Caso contrario retornará +
         /// </summary>
         /// <param name="operador">operador a validar</param>
         /// <returns>devuelve el operador validado y con el que trabajara el programa</returns>
@@ -20,7 +20,7 @@ namespace Entidades
         }
 
         /// <summary>
-        /// realiza la operacion, previamente validando operador
+        /// valida y realiza la operación pedida entre ambos números.
         /// </summary>
         /// <param name="num1">primer operando</param>
         /// <param name="num2">segundo operando</param>
