@@ -81,32 +81,12 @@ namespace MiCalculadora
                 operador = cmbOperador.Text;
             }
 
-            if(operando1 == "")
-            {
-                operando1 = "0";
-            }
-
-            if (operando2 == "")
-            {
-                operando2 = "0";
-            }
-
-            if (operando2.StartsWith('-'))
-            {
-                operando2 = $"({operando2})";
-            }
-
-            if (operando2=="0" && operador == "/")
-            {
-                this.lblResultado.Text = "ERROR";
-            }
-            else 
-            {
-                resultado = Operar(operando1, operando2, operador);
-                resultado = Math.Round(resultado, 3);
-                this.lblResultado.Text = resultado.ToString();
-                this.lstOperaciones.Items.Add($"{operando1} {operador} {operando2} = {resultado}");
-            }
+            resultado = Operar(operando1, operando2, operador);
+            resultado = Math.Round(resultado, 3);
+                
+            this.lblResultado.Text = resultado.ToString();
+            this.lstOperaciones.Items.Add($"{operando1} {operador} {operando2} = {resultado}");
+            
 
         }
 
