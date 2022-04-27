@@ -54,8 +54,11 @@ namespace MiCalculadora
         {
             Operando operando1 = new Operando(numero1);
             Operando operando2 = new Operando(numero2);
+            char auxOperador;
 
-            double resultado= Calculadora.Operar(operando1, operando2, char.Parse(operador));
+            char.TryParse(operador, out auxOperador);
+
+            double resultado= Calculadora.Operar(operando1, operando2, auxOperador);
 
             return resultado;
         }
@@ -69,21 +72,18 @@ namespace MiCalculadora
         {
             string operando1 = this.txtNumero1.Text;
             string operando2 = this.txtNumero2.Text;
-            string operador;
+            string operador= this.cmbOperador.Text;
             double resultado;
+
+            resultado = Operar(operando1, operando2, operador);
+            resultado = Math.Round(resultado, 3);
 
             if (cmbOperador.SelectedItem is null)
             {
                 operador = "+";
             }
-            else
-            {
-                operador = cmbOperador.Text;
-            }
+            
 
-            resultado = Operar(operando1, operando2, operador);
-            resultado = Math.Round(resultado, 3);
-                
             this.lblResultado.Text = resultado.ToString();
             this.lstOperaciones.Items.Add($"{operando1} {operador} {operando2} = {resultado}");
             
