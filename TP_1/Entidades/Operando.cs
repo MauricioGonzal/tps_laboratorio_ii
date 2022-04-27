@@ -57,12 +57,9 @@ namespace Entidades
         {
             double numero;
 
-            if(double.TryParse(strNumero, out numero))
-            {
-                return numero;
-            }
+            double.TryParse(strNumero, out numero);
 
-            return 0;
+            return numero;
             
             
         }
@@ -148,6 +145,10 @@ namespace Entidades
 
         public static double operator /(Operando n1, Operando n2)
         {
+            if(n2.numero == 0)
+            {
+                return double.MinValue;
+            }
             return n1.numero / n2.numero;
         }
 
