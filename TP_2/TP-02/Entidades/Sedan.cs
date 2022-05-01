@@ -16,7 +16,17 @@ namespace Entidades
             CuatroPuertas, 
             CincoPuertas 
         }
-        
+
+        /// <summary>
+        /// Sedan son 'Mediano'
+        /// </summary>
+        protected override ETamanio Tamanio
+        {
+            get
+            {
+                return ETamanio.Mediano;
+            }
+        }
 
         /// <summary>
         /// Por defecto, TIPO será CuatroPuertas
@@ -34,18 +44,6 @@ namespace Entidades
         {
             this.tipo = tipo;
         }
-
-        /// <summary>
-        /// Sedan son 'Mediano'
-        /// </summary>
-        protected override ETamanio Tamanio
-        {
-            get
-            {
-                return ETamanio.Mediano;
-            }
-        }
-
 
         /// <summary>
         /// metodo sobreescrito mostrar que invoca al metodo de la clase base y la extiende con sus propias caracteristicas

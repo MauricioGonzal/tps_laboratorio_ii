@@ -8,11 +8,6 @@ namespace Entidades
 {
     public class Suv: Vehiculo
     {
-        public Suv(EMarca marca, string chasis, ConsoleColor color)
-            : base(chasis, marca, color)
-        {
-            
-        }
         /// <summary>
         /// SUV son 'Grande'
         /// </summary>
@@ -22,6 +17,12 @@ namespace Entidades
             {
                 return ETamanio.Grande;
             }
+        }
+
+        public Suv(EMarca marca, string chasis, ConsoleColor color)
+            : base(chasis, marca, color)
+        {
+            
         }
 
         /// <summary>

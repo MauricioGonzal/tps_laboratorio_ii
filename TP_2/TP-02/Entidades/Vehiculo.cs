@@ -31,6 +31,11 @@ namespace Entidades
             Grande
         }
 
+        /// <summary>
+        /// ReadOnly: Retornará el tamaño
+        /// </summary>
+        protected abstract ETamanio Tamanio { get; }
+
 
         public Vehiculo(string chasis, EMarca marca, ConsoleColor color)
         {
@@ -38,11 +43,6 @@ namespace Entidades
             this.marca = marca;
             this.color = color;
         }
-
-        /// <summary>
-        /// ReadOnly: Retornará el tamaño
-        /// </summary>
-        protected abstract ETamanio Tamanio { get;}
 
         /// <summary>
         /// Publica todos los datos del Vehiculo.

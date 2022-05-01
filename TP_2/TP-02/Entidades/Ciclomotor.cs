@@ -8,11 +8,6 @@ namespace Entidades
 {
     public class Ciclomotor : Vehiculo
     {
-        public Ciclomotor(EMarca marca, string chasis, ConsoleColor color): base(chasis,marca,color) 
-        {
-
-        }
-        
         /// <summary>
         /// Ciclomotor son 'Chico'
         /// </summary>
@@ -24,6 +19,10 @@ namespace Entidades
             }
         }
 
+        public Ciclomotor(EMarca marca, string chasis, ConsoleColor color): base(chasis,marca,color) 
+        {
+
+        }
 
         /// <summary>
         /// metodo sobreescrito mostrar que invoca al metodo de la clase base y la extiende con sus propias caracteristicas
