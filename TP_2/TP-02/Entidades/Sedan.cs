@@ -10,23 +10,14 @@ namespace Entidades
 {
     public class Sedan : Vehiculo
     {
-        private ETipo tipo;
+        
         public enum ETipo 
         { 
             CuatroPuertas, 
             CincoPuertas 
         }
 
-        /// <summary>
-        /// Sedan son 'Mediano'
-        /// </summary>
-        protected override ETamanio Tamanio
-        {
-            get
-            {
-                return ETamanio.Mediano;
-            }
-        }
+        private ETipo tipo;
 
         /// <summary>
         /// Por defecto, TIPO será CuatroPuertas
@@ -43,6 +34,17 @@ namespace Entidades
         public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo):base(chasis, marca, color)
         {
             this.tipo = tipo;
+        }
+
+        /// <summary>
+        /// Sedan son 'Mediano'
+        /// </summary>
+        protected override ETamanio Tamanio
+        {
+            get
+            {
+                return ETamanio.Mediano;
+            }
         }
 
         /// <summary>

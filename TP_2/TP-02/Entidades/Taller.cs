@@ -11,12 +11,14 @@ namespace Entidades
     /// </summary>
     public sealed class Taller
     {
-        List<Vehiculo> vehiculos;
-        int espacioDisponible;
+        
         public enum ETipo
         {
             Ciclomotor, Sedan, SUV, Todos
         }
+
+        List<Vehiculo> vehiculos;
+        int espacioDisponible;
 
         #region "Constructores"
         private Taller()
@@ -26,17 +28,6 @@ namespace Entidades
         public Taller(int espacioDisponible):this()
         {
             this.espacioDisponible = espacioDisponible;
-        }
-        #endregion
-
-        #region "Sobrecargas"
-        /// <summary>
-        /// Muestro el estacionamiento y TODOS los vehículos
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString()
-        {
-            return Taller.Listar(this, ETipo.Todos);
         }
         #endregion
 
@@ -85,6 +76,17 @@ namespace Entidades
             }
 
             return sb.ToString();
+        }
+        #endregion
+
+        #region "Sobrecargas"
+        /// <summary>
+        /// Muestro el estacionamiento y TODOS los vehículos
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Taller.Listar(this, ETipo.Todos);
         }
         #endregion
 

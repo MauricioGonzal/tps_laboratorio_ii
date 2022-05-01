@@ -11,9 +11,6 @@ namespace Entidades
     /// </summary>
     public abstract class Vehiculo
     {
-        EMarca marca;
-        string chasis;
-        ConsoleColor color;
         public enum EMarca
         {
             Chevrolet, 
@@ -31,11 +28,9 @@ namespace Entidades
             Grande
         }
 
-        /// <summary>
-        /// ReadOnly: Retornará el tamaño
-        /// </summary>
-        protected abstract ETamanio Tamanio { get; }
-
+        EMarca marca;
+        string chasis;
+        ConsoleColor color;
 
         public Vehiculo(string chasis, EMarca marca, ConsoleColor color)
         {
@@ -44,11 +39,17 @@ namespace Entidades
             this.color = color;
         }
 
+
+        /// <summary>
+        /// ReadOnly: Retornará el tamaño
+        /// </summary>
+        protected abstract ETamanio Tamanio { get; }
+
         /// <summary>
         /// Publica todos los datos del Vehiculo.
         /// </summary>
         /// <returns></returns>
-         public virtual string Mostrar()
+        public virtual string Mostrar()
         {
             return (string)this;
         }
