@@ -46,7 +46,12 @@ namespace Entidades
         public List<Libro> LibrosCliente { get => librosCliente; set => librosCliente = value; }
         public FormaDePago FormaDePago1 { get => formaDePago; set => formaDePago = value; }
     
-            
+        
+        /// <summary>
+        /// agrega el libro comprado por el cliente a su lista
+        /// </summary>
+        /// <param name="libro"></param>
+        /// <returns>falso si se vende la ultima unidad del libro, sino true</returns>
         public bool ComprarLibro(Libro libro)
         {
             this.librosCliente.Add(libro);
@@ -59,6 +64,11 @@ namespace Entidades
             return true;
         }
 
+        /// <summary>
+        /// verifica si existe el cliente que se quiere agregar, y si no existe lo agrega
+        /// </summary>
+        /// <param name="libreria"></param>
+        /// <returns>false si ya existe, si no existe retorna el resultado de la sobrecarga +</returns>
         public bool AgregarCliente(Libreria libreria)
         {
             foreach(Cliente cliente in libreria.clientes)
@@ -72,6 +82,11 @@ namespace Entidades
             return (libreria + this);
             
         }
+
+        /// <summary>
+        /// Muestra ficha completa del cliente
+        /// </summary>
+        /// <returns>Retorna el string con todos los datos</returns>
         string IExponerFicha.MostrarFicha()
         {
             StringBuilder sb = new StringBuilder();

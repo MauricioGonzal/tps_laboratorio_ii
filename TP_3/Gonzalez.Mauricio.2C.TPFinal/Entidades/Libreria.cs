@@ -37,6 +37,11 @@ namespace Entidades
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Verifica si el libro que se quiere registrar ya existe en la libreria
+        /// </summary>
+        /// <param name="libro"></param>
+        /// <returns>true si ya existe, false si no</returns>
         public bool VerificarReplicaDeLibro(Libro libro)
         {
             if (libro != null)
