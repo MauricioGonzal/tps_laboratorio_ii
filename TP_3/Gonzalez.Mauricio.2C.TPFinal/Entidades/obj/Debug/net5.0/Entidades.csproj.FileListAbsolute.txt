@@ -1,0 +1,13 @@
+C:\Users\Mauri\source\repos\TP_3\Gonzalez.Mauricio.2C.TPFinal\Entidades\bin\Debug\net5.0\Entidades.deps.json
+C:\Users\Mauri\source\repos\TP_3\Gonzalez.Mauricio.2C.TPFinal\Entidades\bin\Debug\net5.0\Entidades.dll
+C:\Users\Mauri\source\repos\TP_3\Gonzalez.Mauricio.2C.TPFinal\Entidades\bin\Debug\net5.0\Entidades.pdb
+C:\Users\Mauri\source\repos\TP_3\Gonzalez.Mauricio.2C.TPFinal\Entidades\obj\Debug\net5.0\Entidades.csproj.AssemblyReference.cache
+C:\Users\Mauri\source\repos\TP_3\Gonzalez.Mauricio.2C.TPFinal\Entidades\obj\Debug\net5.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mauri\source\repos\TP_3\Gonzalez.Mauricio.2C.TPFinal\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfoInputs.cache
+C:\Users\Mauri\source\repos\TP_3\Gonzalez.Mauricio.2C.TPFinal\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfo.cs
+C:\Users\Mauri\source\repos\TP_3\Gonzalez.Mauricio.2C.TPFinal\Entidades\obj\Debug\net5.0\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Mauri\source\repos\TP_3\Gonzalez.Mauricio.2C.TPFinal\Entidades\obj\Debug\net5.0\Entidades.dll
+C:\Users\Mauri\source\repos\TP_3\Gonzalez.Mauricio.2C.TPFinal\Entidades\obj\Debug\net5.0\refint\Entidades.dll
+C:\Users\Mauri\source\repos\TP_3\Gonzalez.Mauricio.2C.TPFinal\Entidades\obj\Debug\net5.0\Entidades.pdb
+C:\Users\Mauri\source\repos\TP_3\Gonzalez.Mauricio.2C.TPFinal\Entidades\obj\Debug\net5.0\ref\Entidades.dll
+C:\Users\Mauri\source\repos\TP_3\Gonzalez.Mauricio.2C.TPFinal\Entidades\bin\Debug\net5.0\datosLibros.json

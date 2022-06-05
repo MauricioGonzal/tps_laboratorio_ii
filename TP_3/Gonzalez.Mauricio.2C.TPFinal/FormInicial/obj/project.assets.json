@@ -1,0 +1,168 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0-windows7.0": {
+      "Entidades/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Entidades.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entidades.dll": {}
+        }
+      },
+      "FormInforme/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Entidades": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FormInforme.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FormInforme.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "FormRegistroLibros/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Entidades": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FormRegistroLibros.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FormRegistroLibros.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "FrmRegistro/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Entidades": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FrmRegistro.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmRegistro.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      }
+    }
+  },
+  "libraries": {
+    "Entidades/1.0.0": {
+      "type": "project",
+      "path": "../Entidades/Entidades.csproj",
+      "msbuildProject": "../Entidades/Entidades.csproj"
+    },
+    "FormInforme/1.0.0": {
+      "type": "project",
+      "path": "../FormInforme/FormInforme.csproj",
+      "msbuildProject": "../FormInforme/FormInforme.csproj"
+    },
+    "FormRegistroLibros/1.0.0": {
+      "type": "project",
+      "path": "../FormRegistroLibros/FormRegistroLibros.csproj",
+      "msbuildProject": "../FormRegistroLibros/FormRegistroLibros.csproj"
+    },
+    "FrmRegistro/1.0.0": {
+      "type": "project",
+      "path": "../FrmProyecto/FrmRegistro.csproj",
+      "msbuildProject": "../FrmProyecto/FrmRegistro.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0-windows7.0": [
+      "Entidades >= 1.0.0",
+      "FormInforme >= 1.0.0",
+      "FormRegistroLibros >= 1.0.0",
+      "FrmRegistro >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Mauri\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormInicial\\FormInicial.csproj",
+      "projectName": "FormInicial",
+      "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormInicial\\FormInicial.csproj",
+      "packagesPath": "C:\\Users\\Mauri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormInicial\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Mauri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0-windows7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "projectReferences": {
+            "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj"
+            },
+            "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormInforme\\FormInforme.csproj": {
+              "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormInforme\\FormInforme.csproj"
+            },
+            "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormRegistroLibros\\FormRegistroLibros.csproj": {
+              "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormRegistroLibros\\FormRegistroLibros.csproj"
+            },
+            "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FrmProyecto\\FrmRegistro.csproj": {
+              "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FrmProyecto\\FrmRegistro.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0-windows7.0": {
+        "targetAlias": "net5.0-windows",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

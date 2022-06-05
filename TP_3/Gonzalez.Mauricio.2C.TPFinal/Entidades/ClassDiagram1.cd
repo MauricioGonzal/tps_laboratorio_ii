@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Entidades.Cliente">
+    <Position X="6.25" Y="0.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Entidades.Cliente.FormaDePago" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Cliente.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAEBAAABACQAAACkAAAAoAAAACAAAAAAQAAABAAAAAA=</HashCode>
+      <FileName>Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Libreria">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAIAAAQCAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Libreria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Libro">
+    <Position X="3.5" Y="1.25" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Entidades.Libro.Categoria" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Libro.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAACEAAAAoAAQgAAAEIAAAAAAAAAIAAA=</HashCode>
+      <FileName>Libro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
