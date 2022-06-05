@@ -43,9 +43,7 @@ namespace FormInicial
 
                 if (formRegistro.Cliente is not null)
                 {
-                    bool retorno =   formRegistro.Cliente.AgregarCliente(libreria);
-               
-                    if (retorno)
+                    if (formRegistro.Cliente.AgregarCliente(libreria))
                     {
                         MessageBox.Show("el cliente se agrego");
                         this.listBoxClientes.Items.Add(formRegistro.Cliente);
@@ -219,6 +217,8 @@ namespace FormInicial
                 {
                     libreria.libros = ClaseSerializadora<List<Libro>>.Leer("Libros");
                     banderaCargaLibros = 1;
+                    this.librosToolStripMenuItem1.Enabled = true;   
+
                     foreach (Libro libro in libreria.libros)
                     {
                         this.listBoxLibros.Items.Add(libro);
@@ -245,6 +245,7 @@ namespace FormInicial
                 {
                     libreria.clientes = ClaseSerializadora<List<Cliente>>.Leer("Clientes");
                     banderaCargaClientes = 1;
+                    this.clientesToolStripMenuItem1.Enabled = true;
                     foreach (Cliente cliente in libreria.clientes)
                     {
                         this.listBoxClientes.Items.Add(cliente);
@@ -286,23 +287,27 @@ namespace FormInicial
             try
             {
                 
-                    ClaseSerializadora<List<Cliente>>.Escribir(libreria.clientes, "Clientes");
-                    
-                
-
+                ClaseSerializadora<List<Cliente>>.Escribir(libreria.clientes, "Clientes");
+                MessageBox.Show("El archivo ha sido guardado correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Vuelva a intentarlo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-
-
         }
 
         private void librosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ClaseSerializadora<List<Libro>>.Escribir(libreria.libros, "Libros");
+            try
+            {
+                ClaseSerializadora<List<Libro>>.Escribir(libreria.libros, "Libros");
+                MessageBox.Show("El archivo ha sido guardado correctamente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Vuelva a intentarlo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void btnLibreria_Click(object sender, EventArgs e)

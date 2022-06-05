@@ -41,10 +41,8 @@ namespace FormInforme
             else if(libro is not null)
             {
                 this.richTextBox1.Text = ((IExponerFicha)libro).MostrarFicha();
-
             }
-               
-            
+ 
         }
     }
 }

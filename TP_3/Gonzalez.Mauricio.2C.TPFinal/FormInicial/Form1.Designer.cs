@@ -55,7 +55,7 @@
             // 
             // btnRegistrarCliente
             // 
-            this.btnRegistrarCliente.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRegistrarCliente.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnRegistrarCliente.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnRegistrarCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnRegistrarCliente.Location = new System.Drawing.Point(12, 348);
@@ -93,7 +93,7 @@
             // 
             // btnAgregarLibro
             // 
-            this.btnAgregarLibro.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAgregarLibro.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnAgregarLibro.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAgregarLibro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAgregarLibro.Location = new System.Drawing.Point(595, 348);
@@ -106,7 +106,7 @@
             // 
             // btnVender
             // 
-            this.btnVender.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnVender.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.btnVender.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVender.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnVender.Location = new System.Drawing.Point(364, 337);
@@ -119,7 +119,7 @@
             // 
             // btnInformeCliente
             // 
-            this.btnInformeCliente.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnInformeCliente.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnInformeCliente.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnInformeCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnInformeCliente.Location = new System.Drawing.Point(162, 348);
@@ -175,11 +175,12 @@
             this.clientesToolStripMenuItem1,
             this.librosToolStripMenuItem1});
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.guardarToolStripMenuItem.Text = "Guardar";
             // 
             // clientesToolStripMenuItem1
             // 
+            this.clientesToolStripMenuItem1.Enabled = false;
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
             this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.clientesToolStripMenuItem1.Text = "Clientes";
@@ -187,6 +188,7 @@
             // 
             // librosToolStripMenuItem1
             // 
+            this.librosToolStripMenuItem1.Enabled = false;
             this.librosToolStripMenuItem1.Name = "librosToolStripMenuItem1";
             this.librosToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.librosToolStripMenuItem1.Text = "Libros";
@@ -198,7 +200,7 @@
             this.clientesToolStripMenuItem,
             this.librosToolStripMenuItem});
             this.cargarToolStripMenuItem.Name = "cargarToolStripMenuItem";
-            this.cargarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cargarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.cargarToolStripMenuItem.Text = "Cargar ";
             // 
             // clientesToolStripMenuItem
@@ -217,7 +219,7 @@
             // 
             // btnModificarCliente
             // 
-            this.btnModificarCliente.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnModificarCliente.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnModificarCliente.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnModificarCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnModificarCliente.Location = new System.Drawing.Point(13, 399);
@@ -230,7 +232,7 @@
             // 
             // btnEliminarCliente
             // 
-            this.btnEliminarCliente.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEliminarCliente.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnEliminarCliente.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEliminarCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEliminarCliente.Location = new System.Drawing.Point(162, 399);
@@ -243,7 +245,7 @@
             // 
             // btnInformeLibro
             // 
-            this.btnInformeLibro.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnInformeLibro.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnInformeLibro.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnInformeLibro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnInformeLibro.Location = new System.Drawing.Point(745, 348);
@@ -256,7 +258,7 @@
             // 
             // btnModificarLibro
             // 
-            this.btnModificarLibro.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnModificarLibro.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnModificarLibro.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnModificarLibro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnModificarLibro.Location = new System.Drawing.Point(595, 399);
@@ -269,7 +271,7 @@
             // 
             // btnEliminarLibro
             // 
-            this.btnEliminarLibro.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEliminarLibro.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnEliminarLibro.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEliminarLibro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEliminarLibro.Location = new System.Drawing.Point(745, 399);
@@ -311,6 +313,7 @@
             this.Controls.Add(this.listBoxClientes);
             this.Controls.Add(this.btnRegistrarCliente);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
