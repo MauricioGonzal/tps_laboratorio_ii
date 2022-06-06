@@ -145,6 +145,10 @@ namespace FormInicial
                     MessageBox.Show("El cliente ha sido eliminado");
                 }
             }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un cliente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEliminarLibro_Click(object sender, EventArgs e)
@@ -158,6 +162,10 @@ namespace FormInicial
                     this.listBoxLibros.Items.Remove(libro);
                     MessageBox.Show("El libro ha sido eliminado");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un libro", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -183,6 +191,10 @@ namespace FormInicial
                 }
 
             }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un cliente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnModificarLibro_Click(object sender, EventArgs e)
@@ -207,6 +219,10 @@ namespace FormInicial
 
                 }
             }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un libro", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void librosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -215,14 +231,19 @@ namespace FormInicial
             {
                 if (banderaCargaLibros == 0)
                 {
-                    libreria.libros = ClaseSerializadora<List<Libro>>.Leer("Libros");
+
+                    List<Libro> libros;
+                    libros = ClaseSerializadora<List<Libro>>.Leer("Libros");
+
+                    foreach(Libro l in libros)
+                    {
+                        libreria.libros.Add(l);
+                        this.listBoxLibros.Items.Add(l);
+                    }
+                    
                     banderaCargaLibros = 1;
                     this.librosToolStripMenuItem1.Enabled = true;   
 
-                    foreach (Libro libro in libreria.libros)
-                    {
-                        this.listBoxLibros.Items.Add(libro);
-                    }
                 }
                 else
                 {
@@ -243,17 +264,21 @@ namespace FormInicial
             {
                 if (banderaCargaClientes == 0)
                 {
-                    libreria.clientes = ClaseSerializadora<List<Cliente>>.Leer("Clientes");
+                    List<Cliente> clientes;
+                    clientes= ClaseSerializadora<List<Cliente>>.Leer("Clientes");
+                    foreach (Cliente c in clientes)
+                    {
+                        libreria.clientes.Add(c);
+                        this.listBoxClientes.Items.Add(c);
+                    }
+                    
                     banderaCargaClientes = 1;
                     this.clientesToolStripMenuItem1.Enabled = true;
-                    foreach (Cliente cliente in libreria.clientes)
-                    {
-                        this.listBoxClientes.Items.Add(cliente);
-                    }
+                    
                 }
                 else
                 {
-                    MessageBox.Show("El archivo ya se encuentra cargado");
+                    MessageBox.Show("El archivo ya se encuentra cargado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 
             }

@@ -30,10 +30,15 @@ namespace Entidades
 
         string IExponerFicha.MostrarFicha()
         {
+            int stock = 0;
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(this.Nombre);
             sb.AppendLine($"Cantidad de clientes activos: {this.clientes.Count}");
-            sb.AppendLine($"Cantidad de libros en stock: {this.libros.Count}");
+            foreach(Libro libro in this.libros)
+            {
+                stock += libro.Stock;
+            }
+            sb.AppendLine($"Cantidad de libros en stock: {stock}");
             return sb.ToString();
         }
 
@@ -159,6 +164,7 @@ namespace Entidades
                     if(item.Nombre == libro.Nombre)
                     {
                         libreria.libros.Remove(item);
+                        break;
                     }
                     
                     
