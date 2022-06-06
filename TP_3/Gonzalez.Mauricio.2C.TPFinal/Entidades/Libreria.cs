@@ -63,11 +63,17 @@ namespace Entidades
         }
 
         
-
+        /// <summary>
+        /// agrega un cliente a la libreria
+        /// </summary>
+        /// <param name="libreria"></param>
+        /// <param name="cliente"></param>
+        /// <returns>true si la operacion se concreto, false si algun parametro es null</returns>
         public static bool operator +(Libreria libreria, Cliente cliente)
         {
-            if(cliente is not null && libreria is not null)
+            if(cliente is not null && libreria is not null && libreria!=cliente)
             {
+                
                 libreria.clientes.Add(cliente);
                 return true;
 
@@ -76,6 +82,12 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// verifica si un cliente ya se encuentra en la libreria
+        /// </summary>
+        /// <param name="libreria"></param>
+        /// <param name="c"></param>
+        /// <returns>true si ya existe, false si no</returns>
         public static bool operator ==(Libreria libreria, Cliente c)
         {
             
@@ -83,7 +95,7 @@ namespace Entidades
             {
                 foreach (Cliente item in libreria.clientes)
                 {
-                    if (c.Nombre == item.Nombre)
+                    if (c.Nombre == item.Nombre && c.Apellido==item.Apellido)
                     {
                         return true;
                     }
@@ -101,6 +113,12 @@ namespace Entidades
             return !(libreria==c);
         }
 
+        /// <summary>
+        /// verifica si un libro ya existe en la libreria
+        /// </summary>
+        /// <param name="libreria"></param>
+        /// <param name="libro"></param>
+        /// <returns>true si ya existe, false si no</returns>
         public static bool operator ==(Libreria libreria, Libro libro)
         {
            
@@ -116,10 +134,7 @@ namespace Entidades
                     }
                 }
             }
-                    
-                    
-                
-            
+  
             return false;
         }
 
@@ -128,31 +143,23 @@ namespace Entidades
             return !(libreria==libro);
         } 
 
+        /// <summary>
+        /// agrega un libro a la libreria si no existe
+        /// </summary>
+        /// <param name="libreria"></param>
+        /// <param name="libro"></param>
+        /// <returns></returns>
         public static bool operator +(Libreria libreria, Libro libro)
         {
 
-            if(libreria is not null && libro is not null)
+            if(libreria is not null && libro is not null && !libreria.VerificarReplicaDeLibro(libro))
             {
-                foreach (Libro item in libreria.libros)
-                {
-                    if (libro.Nombre == item.Nombre)
-                    {
-                        item.Stock++;
-                        return true;
-
-                    }
-                }
-
+                libreria.libros.Add(libro);
+                return true;
             }     
-            else
-            {
+            
                 return false;
-            }
-
-           
-
-            libreria.libros.Add(libro);
-            return true;
+  
         }
 
         public static Libreria operator - (Libreria libreria, Libro libro)

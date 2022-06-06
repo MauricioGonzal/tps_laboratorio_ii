@@ -64,24 +64,7 @@ namespace Entidades
             return true;
         }
 
-        /// <summary>
-        /// verifica si existe el cliente que se quiere agregar, y si no existe lo agrega
-        /// </summary>
-        /// <param name="libreria"></param>
-        /// <returns>false si ya existe, si no existe retorna el resultado de la sobrecarga +</returns>
-        public bool AgregarCliente(Libreria libreria)
-        {
-            foreach(Cliente cliente in libreria.clientes)
-            {
-                if(cliente.Nombre == this.Nombre)
-                {
-                    return false;
-                }
-
-            }
-            return (libreria + this);
-            
-        }
+        
 
         /// <summary>
         /// Muestra ficha completa del cliente

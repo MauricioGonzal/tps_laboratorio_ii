@@ -43,7 +43,7 @@ namespace FormInicial
 
                 if (formRegistro.Cliente is not null)
                 {
-                    if (formRegistro.Cliente.AgregarCliente(libreria))
+                    if (libreria + formRegistro.Cliente)
                     {
                         MessageBox.Show("el cliente se agrego");
                         this.listBoxClientes.Items.Add(formRegistro.Cliente);
@@ -62,14 +62,14 @@ namespace FormInicial
             FrmRegistroLibros formRegistroLibro = new FrmRegistroLibros();
             formRegistroLibro.ShowDialog();
             
-            if (libreria.VerificarReplicaDeLibro(formRegistroLibro.libro))
-            {
-                MessageBox.Show("El item ingresado ya existe en el sistema", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-            else if (libreria + formRegistroLibro.libro)
+            if (formRegistroLibro.libro is not null && libreria is not null && libreria + formRegistroLibro.libro)
             {
                 MessageBox.Show("El libro fue agregado");
+
+            }
+            else
+            {
+                MessageBox.Show("El item ingresado ya existe en el sistema", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             this.listBoxLibros.Items.Clear();
@@ -177,16 +177,23 @@ namespace FormInicial
 
                 if (cliente != null)
                 {
-                    this.listBoxClientes.Items.Remove(cliente);
-                    libreria = libreria - cliente;
+                    
 
                     FrmRegistroCliente formRegistro = new FrmRegistroCliente(cliente);
                     formRegistro.ShowDialog();
 
+                    
+
                     if (libreria + formRegistro.Cliente)
                     {
+                        this.listBoxClientes.Items.Remove(cliente);
+                        libreria = libreria - cliente;
                         MessageBox.Show("el cliente se modifico");
                         this.listBoxClientes.Items.Add(formRegistro.Cliente);
+                    }
+                    else
+                    {
+                        MessageBox.Show("el cliente ya existe en el sistema");
                     }
                 }
 
@@ -213,8 +220,13 @@ namespace FormInicial
 
                     if (libreria + formRegistroLibro.libro)
                     {
+
                         MessageBox.Show("el libro se modifico");
                         this.listBoxLibros.Items.Add(formRegistroLibro.libro);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El libro ya existe en el sistema");
                     }
 
                 }
@@ -339,5 +351,7 @@ namespace FormInicial
         {
             MessageBox.Show(((IExponerFicha)libreria).MostrarFicha());
         }
+
+        
     }
 }
