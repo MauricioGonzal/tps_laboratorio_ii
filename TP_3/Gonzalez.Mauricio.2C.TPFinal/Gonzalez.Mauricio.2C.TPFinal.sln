@@ -5,15 +5,9 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Entidades.csproj", "{87E37163-EF21-41A3-9E54-CF3798255873}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormInicial", "FormInicial\FormInicial.csproj", "{D4CC08AC-F085-4286-A23B-D0018AB69F94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vista", "FormInicial\Vista.csproj", "{D4CC08AC-F085-4286-A23B-D0018AB69F94}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrmRegistro", "FrmProyecto\FrmRegistro.csproj", "{3B5540C8-879F-4F87-B35E-94998CE0D24C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormRegistroLibros", "FormRegistroLibros\FormRegistroLibros.csproj", "{FFFF7A48-17E9-4960-B693-9EBC065FA207}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormInforme", "FormInforme\FormInforme.csproj", "{1D6427F8-0BEF-4434-8E7B-AA2B70E74135}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTPFinal", "TestTPFinal\TestTPFinal.csproj", "{D4235032-BAEA-49D2-AF0F-253C2E8C59BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTPFinal", "TestTPFinal\TestTPFinal.csproj", "{D4235032-BAEA-49D2-AF0F-253C2E8C59BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,18 +23,6 @@ Global
 		{D4CC08AC-F085-4286-A23B-D0018AB69F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4CC08AC-F085-4286-A23B-D0018AB69F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4CC08AC-F085-4286-A23B-D0018AB69F94}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B5540C8-879F-4F87-B35E-94998CE0D24C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B5540C8-879F-4F87-B35E-94998CE0D24C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B5540C8-879F-4F87-B35E-94998CE0D24C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B5540C8-879F-4F87-B35E-94998CE0D24C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FFFF7A48-17E9-4960-B693-9EBC065FA207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFFF7A48-17E9-4960-B693-9EBC065FA207}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FFFF7A48-17E9-4960-B693-9EBC065FA207}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FFFF7A48-17E9-4960-B693-9EBC065FA207}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1D6427F8-0BEF-4434-8E7B-AA2B70E74135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D6427F8-0BEF-4434-8E7B-AA2B70E74135}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D6427F8-0BEF-4434-8E7B-AA2B70E74135}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D6427F8-0BEF-4434-8E7B-AA2B70E74135}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D4235032-BAEA-49D2-AF0F-253C2E8C59BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D4235032-BAEA-49D2-AF0F-253C2E8C59BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4235032-BAEA-49D2-AF0F-253C2E8C59BD}.Release|Any CPU.ActiveCfg = Release|Any CPU

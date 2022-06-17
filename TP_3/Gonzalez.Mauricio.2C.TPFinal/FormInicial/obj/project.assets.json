@@ -11,54 +11,6 @@
         "runtime": {
           "bin/placeholder/Entidades.dll": {}
         }
-      },
-      "FormInforme/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Entidades": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/FormInforme.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/FormInforme.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WindowsForms"
-        ]
-      },
-      "FormRegistroLibros/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Entidades": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/FormRegistroLibros.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/FormRegistroLibros.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WindowsForms"
-        ]
-      },
-      "FrmRegistro/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Entidades": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/FrmRegistro.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/FrmRegistro.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WindowsForms"
-        ]
       }
     }
   },
@@ -67,29 +19,11 @@
       "type": "project",
       "path": "../Entidades/Entidades.csproj",
       "msbuildProject": "../Entidades/Entidades.csproj"
-    },
-    "FormInforme/1.0.0": {
-      "type": "project",
-      "path": "../FormInforme/FormInforme.csproj",
-      "msbuildProject": "../FormInforme/FormInforme.csproj"
-    },
-    "FormRegistroLibros/1.0.0": {
-      "type": "project",
-      "path": "../FormRegistroLibros/FormRegistroLibros.csproj",
-      "msbuildProject": "../FormRegistroLibros/FormRegistroLibros.csproj"
-    },
-    "FrmRegistro/1.0.0": {
-      "type": "project",
-      "path": "../FrmProyecto/FrmRegistro.csproj",
-      "msbuildProject": "../FrmProyecto/FrmRegistro.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "Entidades >= 1.0.0",
-      "FormInforme >= 1.0.0",
-      "FormRegistroLibros >= 1.0.0",
-      "FrmRegistro >= 1.0.0"
+      "Entidades >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -98,9 +32,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormInicial\\FormInicial.csproj",
-      "projectName": "FormInicial",
-      "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormInicial\\FormInicial.csproj",
+      "projectUniqueName": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormInicial\\Vista.csproj",
+      "projectName": "Vista",
+      "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormInicial\\Vista.csproj",
       "packagesPath": "C:\\Users\\Mauri\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormInicial\\obj\\",
       "projectStyle": "PackageReference",
@@ -121,15 +55,6 @@
           "projectReferences": {
             "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj": {
               "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj"
-            },
-            "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormInforme\\FormInforme.csproj": {
-              "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormInforme\\FormInforme.csproj"
-            },
-            "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormRegistroLibros\\FormRegistroLibros.csproj": {
-              "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormRegistroLibros\\FormRegistroLibros.csproj"
-            },
-            "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FrmProyecto\\FrmRegistro.csproj": {
-              "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FrmProyecto\\FrmRegistro.csproj"
             }
           }
         }
