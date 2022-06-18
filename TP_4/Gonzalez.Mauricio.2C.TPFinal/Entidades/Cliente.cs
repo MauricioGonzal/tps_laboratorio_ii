@@ -55,6 +55,7 @@ namespace Entidades
         public bool ComprarLibro(Libro libro)
         {
             this.librosCliente.Add(libro);
+            
             libro.Stock--;
             if(libro.Stock == 0)
             {

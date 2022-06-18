@@ -25,6 +25,7 @@ namespace FrmProyecto
 
         public FrmRegistroCliente(Cliente c):this()
         {
+
             this.txtNombre.Text = c.Nombre;
             this.txtApellido.Text = c.Apellido;
             this.txtEmail.Text = c.Email;
@@ -43,10 +44,10 @@ namespace FrmProyecto
         {
             try
             {
-                if (string.IsNullOrEmpty(this.txtNombre.Text) || string.IsNullOrEmpty(this.txtApellido.Text) || string.IsNullOrEmpty(this.txtDni.Text) || string.IsNullOrEmpty(this.cmbFormaDePAgo.Text) ||
+                if (string.IsNullOrEmpty(this.txtNombre.Text) || string.IsNullOrEmpty(this.txtApellido.Text) || !this.txtDni.Text.VerificarDni() || string.IsNullOrEmpty(this.cmbFormaDePAgo.Text) ||
                     string.IsNullOrEmpty(this.txtEmail.Text) || string.IsNullOrEmpty(this.txtTelefono.Text))
                 {
-                    throw new DatoVacioException("Algun campo esta sin completar en form registro");
+                    throw new DatoVacioException("Algun campo esta incorrecto en form registro");
                 }
                 else
                 {
@@ -55,7 +56,7 @@ namespace FrmProyecto
             }
             catch (DatoVacioException)
             {
-                MessageBox.Show("Todos los campos son obligatorios");
+                MessageBox.Show("Algun dato ingresado es incorrecto.");
             }
             finally
             {

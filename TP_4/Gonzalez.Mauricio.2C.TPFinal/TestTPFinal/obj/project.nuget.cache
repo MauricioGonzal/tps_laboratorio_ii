@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zUmgGyfPBa/ZsDlGz0ax1JSZlXuCy3rtZJk3E7LLuCok3LQjrOVVdWRSHXZrelNdCgY7/bg/cF36JdYHF5OUAQ==",
+  "dgSpecHash": "2UbwL5ACTlgVv3aMInmZDALYKHv9SaH8DvKA712Z3m0tnLlptINWTwHH+NS3J6lmpEOSU5vJa6E6f6WnMpUCSA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\TestTPFinal\\TestTPFinal.csproj",
+  "projectFilePath": "C:\\Users\\Mauri\\source\\repos\\TP_4\\Gonzalez.Mauricio.2C.TPFinal\\TestTPFinal\\TestTPFinal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mauri\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\Mauri\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

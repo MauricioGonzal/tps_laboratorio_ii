@@ -477,11 +477,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormInicial\\Vista.csproj",
+      "projectUniqueName": "C:\\Users\\Mauri\\source\\repos\\TP_4\\Gonzalez.Mauricio.2C.TPFinal\\FormInicial\\Vista.csproj",
       "projectName": "Vista",
-      "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormInicial\\Vista.csproj",
+      "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_4\\Gonzalez.Mauricio.2C.TPFinal\\FormInicial\\Vista.csproj",
       "packagesPath": "C:\\Users\\Mauri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\FormInicial\\obj\\",
+      "outputPath": "C:\\Users\\Mauri\\source\\repos\\TP_4\\Gonzalez.Mauricio.2C.TPFinal\\FormInicial\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mauri\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -498,8 +498,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj"
+            "C:\\Users\\Mauri\\source\\repos\\TP_4\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_4\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj"
             }
           }
         }

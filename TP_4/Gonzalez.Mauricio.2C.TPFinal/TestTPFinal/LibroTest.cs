@@ -26,6 +26,7 @@ namespace TestTPFinal
         {
             Libro libro;
             Cliente cliente;
+            
 
             cliente = new Cliente();
             libro = new Libro("a", "b", Libro.Categorias.Drama, 2, 30);
@@ -40,7 +41,7 @@ namespace TestTPFinal
         [TestMethod]
         public void VerificarReplicaDeLibro_CuandoQuieroAgregarLibroExistente_DeberiaRetornarTrue()
         {
-            Libreria libreria= new Libreria("e");
+            Libreria libreria= new Libreria("e", null);
             libreria.libros.Add(new Libro("a", "b", Libro.Categorias.Accion, 2, 4));
 
             Assert.IsTrue(libreria.VerificarReplicaDeLibro(new Libro("a", "b", Libro.Categorias.Accion, 2, 4)));
@@ -50,7 +51,7 @@ namespace TestTPFinal
         [TestMethod]
         public void VerificarReplicaDeLibro_CuandoQuieroAgregarNuevoLibro_DeberiaRetornarFalse()
         {
-            Libreria libreria = new Libreria("e");
+            Libreria libreria = new Libreria("e", null);
             libreria.libros.Add(new Libro("a", "b", Libro.Categorias.Accion, 2, 4));
 
             Assert.IsFalse(libreria.VerificarReplicaDeLibro(new Libro("y", "b", Libro.Categorias.Accion, 2, 4)));

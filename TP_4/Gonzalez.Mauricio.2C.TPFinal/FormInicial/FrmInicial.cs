@@ -26,6 +26,7 @@ namespace Vista
         Libreria libreria;
         Libro libro;
         Cliente cliente;
+        ProximosIngresos frmProximosIngresos;
         int banderaCargaClientes = 0;
         int banderaCargaLibros = 0;
 
@@ -366,24 +367,34 @@ namespace Vista
 
         private void crearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmRegistrarReclamo frmRegistrarReclamo = new FrmRegistrarReclamo(libreria);
-            if(frmRegistrarReclamo.ShowDialog()== DialogResult.OK)
+            try
             {
-                libreria.reclamos.Add(frmRegistrarReclamo.Reclamo);
-                MessageBox.Show("El reclamo se ha registrado correctamente");
+                if (libreria.clientes.Count == 0 || libreria.libros.Count == 0)
+                {
+                    throw new DatoVacioException("Hay alguna lista que no esta cargada");
+                }
+                else
+                {
+                    FrmRegistrarReclamo frmRegistrarReclamo = new FrmRegistrarReclamo(libreria);
+                    if (frmRegistrarReclamo.ShowDialog() == DialogResult.OK)
+                    {
+                        libreria.reclamos.Add(frmRegistrarReclamo.Reclamo);
+                        MessageBox.Show("El reclamo se ha registrado correctamente");
+                    }
+                }
             }
+            catch(DatoVacioException)
+            {
+                MessageBox.Show("Datos incompletos", "ERROR", MessageBoxButtons.OK,MessageBoxIcon.Error);   
+            }
+            
+            
         }
 
         private void verListaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmInforme frmInforme = new FrmInforme(libreria);
             frmInforme.ShowDialog();
-        }
-
-        private void proximosIngresosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ProximosIngresos frmProximosIngresos = new ProximosIngresos(libreria);
-            frmProximosIngresos.Show();
         }
 
         private void librosToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -393,6 +404,10 @@ namespace Vista
                 if (libreria.libros.Count > 0)
                 {
                     LibroDAO.Guardar(libreria.libros);
+                }
+                else
+                {
+                    MessageBox.Show("No hay libros cargados", "Atencion!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception)
@@ -408,9 +423,85 @@ namespace Vista
                 if (libreria.reclamos.Count > 0)
                 {
                     ReclamoDAO.Guardar(libreria.reclamos);
+                    MessageBox.Show("Los reclamos han sido guardados exitosamente");
+
+                }
+                else
+                {
+                    MessageBox.Show("No hay reclamos cargados", "Atencion!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception)
+            {
+                MessageBox.Show("ERROR");
+            }
+            
+        }
+
+        private void verToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProximosIngresos = new ProximosIngresos(libreria);
+            frmProximosIngresos.Show();
+        }
+
+        private void crearToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmRegistroLibros frmRegistLib = new FrmRegistroLibros();
+            
+            if(frmProximosIngresos != null)
+                {
+                    frmProximosIngresos.Close();
+                }
+                
+           
+
+            if(frmRegistLib.ShowDialog() == DialogResult.OK)
+            {
+                libreria.proximosIngresos.Add(frmRegistLib.libro);
+            }
+
+        }
+
+        private void librosToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (banderaCargaLibros == 0)
+                {
+                    libreria.libros = LibroDAO.Cargar();
+                    foreach (Libro l in libreria.libros)
+                    {
+
+                        this.listBoxLibros.Items.Add(l);
+                    }
+                    MessageBox.Show("Carga exitosa");
+                    banderaCargaLibros = 1;
+                }
+                else
+                {
+                    MessageBox.Show("Los libros ya se encuentran cargados");
+                }
+                
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("ERROR");
+            }
+            
+        }
+
+        
+
+        private void reclamosToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                libreria.reclamos = ReclamoDAO.Cargar(libreria);
+                MessageBox.Show("Carga exitosa");
+            }
+            catch(Exception)
             {
                 MessageBox.Show("ERROR");
             }

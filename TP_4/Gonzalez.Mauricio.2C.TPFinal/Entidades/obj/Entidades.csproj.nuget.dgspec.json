@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj": {}
+    "C:\\Users\\Mauri\\source\\repos\\TP_4\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\Mauri\\source\\repos\\TP_4\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\Mauri\\source\\repos\\TP_4\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_4\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\Mauri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mauri\\source\\repos\\TP_3\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\Mauri\\source\\repos\\TP_4\\Gonzalez.Mauricio.2C.TPFinal\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mauri\\AppData\\Roaming\\NuGet\\NuGet.Config",

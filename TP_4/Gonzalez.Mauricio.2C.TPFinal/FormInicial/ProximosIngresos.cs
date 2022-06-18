@@ -43,5 +43,7 @@ namespace Vista
             c.cancellationTokenSource.Cancel();
             this.Close();
         }
+
+        
     }
 }
