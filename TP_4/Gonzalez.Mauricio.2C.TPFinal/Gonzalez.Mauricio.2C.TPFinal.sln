@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Entidades.csproj", "{87E37163-EF21-41A3-9E54-CF3798255873}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vista", "FormInicial\Vista.csproj", "{D4CC08AC-F085-4286-A23B-D0018AB69F94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTPFinal", "TestTPFinal\TestTPFinal.csproj", "{D4235032-BAEA-49D2-AF0F-253C2E8C59BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87E37163-EF21-41A3-9E54-CF3798255873}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87E37163-EF21-41A3-9E54-CF3798255873}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87E37163-EF21-41A3-9E54-CF3798255873}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87E37163-EF21-41A3-9E54-CF3798255873}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4CC08AC-F085-4286-A23B-D0018AB69F94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4CC08AC-F085-4286-A23B-D0018AB69F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4CC08AC-F085-4286-A23B-D0018AB69F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4CC08AC-F085-4286-A23B-D0018AB69F94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4235032-BAEA-49D2-AF0F-253C2E8C59BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4235032-BAEA-49D2-AF0F-253C2E8C59BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4235032-BAEA-49D2-AF0F-253C2E8C59BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4235032-BAEA-49D2-AF0F-253C2E8C59BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9BF6FF2-5013-4CBD-806D-2395A1F1D21D}
+	EndGlobalSection
+EndGlobal
