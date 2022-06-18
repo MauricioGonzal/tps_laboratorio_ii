@@ -45,8 +45,41 @@ namespace Vista
             proximos.Add(new Libro("Cuerpo Humano", "Roberto Garcia", Libro.Categorias.Enciclopedia, 10, 350));
             libreria = new Libreria("Libreria MG S.A ", proximos);
 
-            
+            try
+            {
+                    libreria.libros = LibroDAO.Cargar();
+                    foreach (Libro l in libreria.libros)
+                    {
 
+                        this.listBoxLibros.Items.Add(l);
+                    }
+                    
+                    banderaCargaLibros = 1;
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("ERROR");
+            }
+
+            try
+            {
+                    List<Cliente> clientes;
+                    clientes = ClaseSerializadora<List<Cliente>>.Leer("Clientes");
+                    foreach (Cliente c in clientes)
+                    {
+                        libreria.clientes.Add(c);
+                        this.listBoxClientes.Items.Add(c);
+                    }
+
+                    banderaCargaClientes = 1;
+                    this.clientesToolStripMenuItem1.Enabled = true;
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("ERROR");
+            }
 
         }
 
@@ -100,17 +133,23 @@ namespace Vista
         {
             if (this.listBoxClientes.SelectedItem is not null && this.listBoxLibros.SelectedItem is not null)
             {
+                
                 cliente = this.listBoxClientes.SelectedItem as Cliente;
+                cliente.dvl = ActualizarLabelVentaLibro;
                 libro = this.listBoxLibros.SelectedItem as Libro;
                 if (cliente is not null && libro is not null)
                 {
                     
-                    if(!cliente.ComprarLibro(libro))
+                    if(cliente.AvisarVentaDeLibro(libro))
+                    {
+                        MessageBox.Show($"Se ha vendido el libro {libro.Nombre} al cliente {cliente.Nombre}");
+                    }
+                    else
                     {
                         libreria.libros.Remove(libro);
                         this.listBoxLibros.Items.Remove(libro);
                     }
-                    MessageBox.Show($"Se ha vendido el libro {libro.Nombre} al cliente {cliente.Nombre}");
+                   
 
                 }
             }
@@ -119,6 +158,14 @@ namespace Vista
                 MessageBox.Show("Para realizar esta operacion debe seleccionar un libro y un cliente", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+        }
+
+        /// <summary>
+        /// actualiza el label debajo de el boton VENDER para avisar que la venta se dio de forma exitosa, utilizando el delegado de la clase cliente
+        /// </summary>
+        public void ActualizarLabelVentaLibro()
+        {
+            this.lblVentaLibro.Text = "Venta exitosa!";
         }
 
         private void btnInformeCliente_Click(object sender, EventArgs e)

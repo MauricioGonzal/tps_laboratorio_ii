@@ -15,6 +15,8 @@ namespace Entidades
         string email;
         string numeroDeTelefono;
         private List<Libro> librosCliente;
+        public delegate void DelegadoLibroVendido();
+        public DelegadoLibroVendido dvl;
 
         public enum FormaDePago
         {
@@ -91,6 +93,21 @@ namespace Entidades
             }
 
             return sb.ToString();
+        }
+
+        /// <summary>
+        /// llama al delegado para lograr cambiar el contenido del label del formulario inicial
+        /// </summary>
+        /// <param name="libro"></param>
+        /// <returns>true si la venta se da de forma exitosa</returns>
+        public bool AvisarVentaDeLibro(Libro libro)
+        {
+            if (ComprarLibro(libro))
+            {
+                dvl();
+                return true;
+            }
+            return false;
         }
         public override string ToString()
         {

@@ -24,6 +24,10 @@ namespace Entidades
             
         }
 
+        /// <summary>
+        /// utiliza el evento para mostrar la cartelera en pantalla
+        /// </summary>
+        /// <param name="l"></param>
         public void MostrarCartelera(List<Libro> l)
         {
             do
