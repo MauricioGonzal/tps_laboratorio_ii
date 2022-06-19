@@ -11,6 +11,7 @@ using Entidades;
 using FrmProyecto;
 using FormRegistroLibros;
 using FormInforme;
+using System.Threading;
 
 /*Poner título a todos los formularios
 Qué los formularios se abran con alguna relación de posición, no uno en cada punta
@@ -139,18 +140,13 @@ namespace Vista
                 libro = this.listBoxLibros.SelectedItem as Libro;
                 if (cliente is not null && libro is not null)
                 {
-                    
-                    if(cliente.AvisarVentaDeLibro(libro))
-                    {
-                        MessageBox.Show($"Se ha vendido el libro {libro.Nombre} al cliente {cliente.Nombre}");
-                    }
-                    else
+                    bool ret = cliente.AvisarVentaDeLibro(libro);
+                    MessageBox.Show($"Se ha vendido el libro {libro.Nombre} al cliente {cliente.Nombre}");
+                    if (!ret)
                     {
                         libreria.libros.Remove(libro);
                         this.listBoxLibros.Items.Remove(libro);
                     }
-                   
-
                 }
             }
             else
@@ -158,18 +154,22 @@ namespace Vista
                 MessageBox.Show("Para realizar esta operacion debe seleccionar un libro y un cliente", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+            this.lblVentaLibro.Text = "";
         }
 
         /// <summary>
         /// actualiza el label debajo de el boton VENDER para avisar que la venta se dio de forma exitosa, utilizando el delegado de la clase cliente
         /// </summary>
         public void ActualizarLabelVentaLibro()
-        {
-            this.lblVentaLibro.Text = "Venta exitosa!";
+        {  
+            
+                this.lblVentaLibro.Text = "Venta exitosa!";
+
         }
 
         private void btnInformeCliente_Click(object sender, EventArgs e)
         {
+            
             if (this.listBoxClientes.SelectedItems.Count > 0)
             {
                 cliente = this.listBoxClientes.SelectedItem as Cliente;
@@ -199,6 +199,7 @@ namespace Vista
 
         private void btnEliminarCliente_Click(object sender, EventArgs e)
         {
+            
             if (this.listBoxClientes.SelectedItem is not null)
             {
                 cliente = this.listBoxClientes.SelectedItem as Cliente;
@@ -216,6 +217,7 @@ namespace Vista
 
         private void btnEliminarLibro_Click(object sender, EventArgs e)
         {
+            
             if (this.listBoxLibros.SelectedItem is not null)
             {
                 libro = this.listBoxLibros.SelectedItem as Libro;
@@ -234,6 +236,7 @@ namespace Vista
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            
             if (this.listBoxClientes.SelectedItem is not null)
             {
                 cliente = this.listBoxClientes.SelectedItem as Cliente;
@@ -266,6 +269,7 @@ namespace Vista
 
         private void btnModificarLibro_Click(object sender, EventArgs e)
         {
+            
             if (this.listBoxLibros.SelectedIndex != -1)
             {
                 libro = this.listBoxLibros.SelectedItem as Libro;
@@ -299,6 +303,7 @@ namespace Vista
 
         private void librosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 if (banderaCargaLibros == 0)
@@ -554,5 +559,7 @@ namespace Vista
             }
             
         }
+
+       
     }
 }

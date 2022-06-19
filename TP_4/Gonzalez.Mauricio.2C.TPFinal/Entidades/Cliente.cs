@@ -105,6 +105,8 @@ namespace Entidades
             if (ComprarLibro(libro))
             {
                 dvl();
+                
+                
                 return true;
             }
             return false;
