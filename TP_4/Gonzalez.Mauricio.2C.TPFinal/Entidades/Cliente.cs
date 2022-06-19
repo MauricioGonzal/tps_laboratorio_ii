@@ -102,9 +102,10 @@ namespace Entidades
         /// <returns>true si la venta se da de forma exitosa</returns>
         public bool AvisarVentaDeLibro(Libro libro)
         {
+            dvl();
             if (ComprarLibro(libro))
             {
-                dvl();
+                
                 
                 
                 return true;
