@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MiCalculadora"
   ],
-  "SelectedNode": "\\Gonzalez.Mauricio.2C.TP1.sln",
+  "SelectedNode": "\\MiCalculadora\\FormCalculadora.cs",
   "PreviewInSolutionExplorer": false
 }

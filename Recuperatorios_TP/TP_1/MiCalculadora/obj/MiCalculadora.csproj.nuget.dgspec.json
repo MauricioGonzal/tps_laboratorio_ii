@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mauri\\source\\repos\\TP_1\\MiCalculadora\\MiCalculadora.csproj": {}
+    "C:\\Users\\Mauri\\source\\repos\\Recuperatorios_TP\\TP_1\\MiCalculadora\\MiCalculadora.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mauri\\source\\repos\\TP_1\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\Mauri\\source\\repos\\Recuperatorios_TP\\TP_1\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mauri\\source\\repos\\TP_1\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\Mauri\\source\\repos\\Recuperatorios_TP\\TP_1\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_1\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\Mauri\\source\\repos\\Recuperatorios_TP\\TP_1\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\Mauri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mauri\\source\\repos\\TP_1\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\Mauri\\source\\repos\\Recuperatorios_TP\\TP_1\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mauri\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,14 +58,14 @@
         }
       }
     },
-    "C:\\Users\\Mauri\\source\\repos\\TP_1\\MiCalculadora\\MiCalculadora.csproj": {
+    "C:\\Users\\Mauri\\source\\repos\\Recuperatorios_TP\\TP_1\\MiCalculadora\\MiCalculadora.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mauri\\source\\repos\\TP_1\\MiCalculadora\\MiCalculadora.csproj",
+        "projectUniqueName": "C:\\Users\\Mauri\\source\\repos\\Recuperatorios_TP\\TP_1\\MiCalculadora\\MiCalculadora.csproj",
         "projectName": "MiCalculadora",
-        "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_1\\MiCalculadora\\MiCalculadora.csproj",
+        "projectPath": "C:\\Users\\Mauri\\source\\repos\\Recuperatorios_TP\\TP_1\\MiCalculadora\\MiCalculadora.csproj",
         "packagesPath": "C:\\Users\\Mauri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mauri\\source\\repos\\TP_1\\MiCalculadora\\obj\\",
+        "outputPath": "C:\\Users\\Mauri\\source\\repos\\Recuperatorios_TP\\TP_1\\MiCalculadora\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mauri\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +82,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\Mauri\\source\\repos\\TP_1\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\Mauri\\source\\repos\\TP_1\\Entidades\\Entidades.csproj"
+              "C:\\Users\\Mauri\\source\\repos\\Recuperatorios_TP\\TP_1\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\Mauri\\source\\repos\\Recuperatorios_TP\\TP_1\\Entidades\\Entidades.csproj"
               }
             }
           }

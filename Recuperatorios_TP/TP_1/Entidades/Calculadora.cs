@@ -28,11 +28,11 @@ namespace Entidades
         /// <returns>el resultado de la operacion</returns>
         public static double Operar(Operando num1, Operando num2, char operador)
         {
-            double resultado=0;
-            char operadorAux = ValidarOperador(operador);
+            double resultado;
+            operador = ValidarOperador(operador);
             
 
-            switch (operadorAux)
+            switch (operador)
             {
                 case '-':
                     resultado = num1 - num2;
@@ -43,7 +43,7 @@ namespace Entidades
                 case '*':
                     resultado= num1 * num2;
                     break;
-                case '+':
+                default:
                     resultado = num1 + num2;
                     break;
             }

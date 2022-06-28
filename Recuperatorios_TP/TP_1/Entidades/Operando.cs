@@ -18,7 +18,7 @@ namespace Entidades
         {
             set
             {
-                numero = ValidarOperando(value);
+                this.numero = ValidarOperando(value);
             }
         }
 
@@ -55,13 +55,12 @@ namespace Entidades
         /// <returns>retorna el numero convertido a tipo de dato double si es posible, sino retorna 0</returns>
         private double ValidarOperando(string strNumero)
         {
-            double numero;
+            double numero=0;
 
             double.TryParse(strNumero, out numero);
-
+  
             return numero;
-            
-            
+
         }
 
         /// <summary>
@@ -89,7 +88,7 @@ namespace Entidades
         /// <returns>devuelve el numero convertido en formato string si la operacion salio de forma exitosa, o retorna "Valor Invalido"</returns>
         public string BinarioDecimal(string binario)
         {
-           if(EsBinario(binario)==true)
+           if(EsBinario(binario))
             {
                 return Convert.ToInt32(binario, 2).ToString();
             }
@@ -106,10 +105,11 @@ namespace Entidades
         {   
             
             numero = Math.Abs(numero);
+            string result = Convert.ToString((long)numero, 2);
 
-            if(Convert.ToString((long)numero, 2)!=null)
+            if (result!=null)
             {
-                return Convert.ToString((long)numero, 2);
+                return result;
             }
 
             return "Valor Invalido";
