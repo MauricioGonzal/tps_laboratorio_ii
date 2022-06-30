@@ -15,7 +15,7 @@ namespace Entidades
         /// <returns>true si es valido</returns>
         public static bool VerificarDni(this string dni)
         {
-            return dni.Length>8;
+            return dni.Length>=8;
         }
     }
 }

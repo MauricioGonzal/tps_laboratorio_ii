@@ -13,13 +13,6 @@ using FormRegistroLibros;
 using FormInforme;
 using System.Threading;
 
-/*Poner título a todos los formularios
-Qué los formularios se abran con alguna relación de posición, no uno en cada punta
-Qué los datos arranquen cargados por defecto
-Hacer más enfasis en la atención, no es tan importante el ABM en lo que se pidió
-Un proyecto por formulario?
-Dar nombre a los archivos: Form1*/
-
 namespace Vista
 {
     public partial class FrmInicial : Form
@@ -49,14 +42,9 @@ namespace Vista
             try
             {
                     libreria.libros = LibroDAO.Cargar();
-                    foreach (Libro l in libreria.libros)
-                    {
-
-                        this.listBoxLibros.Items.Add(l);
-                    }
-                    
+                    libreria.libros.Sort(Libreria.OrdenarLibros);
+                    this.listBoxLibros.DataSource = libreria.libros;
                     banderaCargaLibros = 1;
-
             }
             catch (Exception)
             {
@@ -65,16 +53,12 @@ namespace Vista
 
             try
             {
-                    List<Cliente> clientes;
-                    clientes = ClaseSerializadora<List<Cliente>>.Leer("Clientes");
-                    foreach (Cliente c in clientes)
-                    {
-                        libreria.clientes.Add(c);
-                        this.listBoxClientes.Items.Add(c);
-                    }
-
-                    banderaCargaClientes = 1;
-                    this.clientesToolStripMenuItem1.Enabled = true;
+                    
+                libreria.clientes = ClaseSerializadora<List<Cliente>>.Leer("Clientes");
+                libreria.clientes.Sort(Libreria.OrdenarClientes);
+                this.listBoxClientes.DataSource = libreria.clientes;
+                banderaCargaClientes = 1;
+                this.clientesToolStripMenuItem1.Enabled = true;
 
             }
             catch (Exception)
@@ -96,7 +80,10 @@ namespace Vista
                     if (libreria + formRegistro.Cliente)
                     {
                         MessageBox.Show("el cliente se agrego");
-                        this.listBoxClientes.Items.Add(formRegistro.Cliente);
+                    this.listBoxClientes.Items.Clear();
+                    libreria.clientes.Sort(Libreria.OrdenarClientes);
+                    listBoxClientes.DataSource= libreria.clientes;
+
                     }
                     else
                     {
@@ -115,17 +102,15 @@ namespace Vista
             if (formRegistroLibro.libro is not null && libreria is not null && libreria + formRegistroLibro.libro)
             {
                 MessageBox.Show("El libro fue agregado");
+                libreria.libros.Sort(Libreria.OrdenarLibros);
+                this.listBoxLibros.Items.Clear();
+                this.listBoxLibros.DataSource= libreria.libros;
+
 
             }
             else if(retorno==DialogResult.OK)
             {
                 MessageBox.Show("El item ingresado ya existe en el sistema", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            this.listBoxLibros.Items.Clear();
-            foreach (Libro libro in libreria.libros)
-            {
-                this.listBoxLibros.Items.Add(libro);
             }
 
         }
@@ -161,10 +146,8 @@ namespace Vista
         /// actualiza el label debajo de el boton VENDER para avisar que la venta se dio de forma exitosa, utilizando el delegado de la clase cliente
         /// </summary>
         public void ActualizarLabelVentaLibro()
-        {  
-            
-                this.lblVentaLibro.Text = "Venta exitosa!";
-
+        {
+            this.lblVentaLibro.Text = "Venta exitosa!";
         }
 
         private void btnInformeCliente_Click(object sender, EventArgs e)
@@ -189,12 +172,10 @@ namespace Vista
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Seguro desea salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.No)
+            if (MessageBox.Show("Seguro desea salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 e.Cancel = true;
             }
-
         }
 
         private void btnEliminarCliente_Click(object sender, EventArgs e)
@@ -243,21 +224,27 @@ namespace Vista
 
                 if (cliente != null)
                 {
-                    
-
                     FrmRegistroCliente formRegistro = new FrmRegistroCliente(cliente);
                     formRegistro.ShowDialog();
 
-                    if(formRegistro.Cliente is not null)
+                    if(cliente.Nombre != formRegistro.Cliente.Nombre && libreria==formRegistro.Cliente)
                     {
-                        this.listBoxClientes.Items.Remove(cliente);
-                        libreria = libreria - cliente;
-                        this.libreria.clientes.Add(formRegistro.Cliente);
-
-                        MessageBox.Show("el cliente se modifico");
-                        this.listBoxClientes.Items.Add(formRegistro.Cliente);
+                        MessageBox.Show("El cliente ya existe en el sistema");
                     }
+                    else
+                    {
+                        cliente.Dni = formRegistro.Cliente.Dni;
+                        cliente.Apellido = formRegistro.Cliente.Apellido;
+                        cliente.Email = formRegistro.Cliente.Email;
+                        cliente.Nombre = formRegistro.Cliente.Nombre;
+                        cliente.NumeroDeTelefono = formRegistro.Cliente.NumeroDeTelefono;
+                        cliente.FormaDePago1 = formRegistro.Cliente.FormaDePago1;
+                        MessageBox.Show("El cliente se modifico correctamente");
+                        this.listBoxClientes.DataSource = null;
+                        libreria.clientes.Sort(Libreria.OrdenarClientes);
+                        this.listBoxClientes.DataSource = libreria.clientes;
 
+                    }
                 }
 
             }
@@ -276,23 +263,25 @@ namespace Vista
 
                 if (libro != null)
                 {
-                    this.listBoxLibros.Items.Remove(libro);
-                    libreria = libreria - libro;
-
                     FrmRegistroLibros formRegistroLibro = new FrmRegistroLibros(libro);
                     formRegistroLibro.ShowDialog();
 
-                    if (libreria + formRegistroLibro.libro)
-                    {
-
-                        MessageBox.Show("el libro se modifico");
-                        this.listBoxLibros.Items.Add(formRegistroLibro.libro);
-                    }
-                    else
+                    if(libro.Nombre != formRegistroLibro.libro.Nombre && libreria.VerificarReplicaDeLibro(formRegistroLibro.libro))
                     {
                         MessageBox.Show("El libro ya existe en el sistema");
                     }
-
+                    else
+                    {
+                        libro.Autor= formRegistroLibro.libro.Autor;
+                        libro.Nombre= formRegistroLibro.libro.Nombre;
+                        libro.Stock= formRegistroLibro.libro.Stock;
+                        libro.Categoria= formRegistroLibro.libro.Categoria;
+                        libro.Precio= formRegistroLibro.libro.Precio;
+                        MessageBox.Show("El libro se modifico correctamente");
+                        libreria.libros.Sort(Libreria.OrdenarLibros);
+                        this.listBoxLibros.DataSource = null;
+                        this.listBoxLibros.DataSource = libreria.libros;
+                    }
                 }
             }
             else
@@ -301,6 +290,7 @@ namespace Vista
             }
         }
 
+
         private void librosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -308,16 +298,8 @@ namespace Vista
             {
                 if (banderaCargaLibros == 0)
                 {
-
-                    List<Libro> libros;
-                    libros = ClaseSerializadora<List<Libro>>.Leer("Libros");
-
-                    foreach(Libro l in libros)
-                    {
-                        libreria.libros.Add(l);
-                        this.listBoxLibros.Items.Add(l);
-                    }
-                    
+                    libreria.libros = ClaseSerializadora<List<Libro>>.Leer("Libros");
+                    this.listBoxLibros.DataSource = libreria.libros;    
                     banderaCargaLibros = 1;
                     this.librosToolStripMenuItem1.Enabled = true;   
 
@@ -341,14 +323,8 @@ namespace Vista
             {
                 if (banderaCargaClientes == 0)
                 {
-                    List<Cliente> clientes;
-                    clientes= ClaseSerializadora<List<Cliente>>.Leer("Clientes");
-                    foreach (Cliente c in clientes)
-                    {
-                        libreria.clientes.Add(c);
-                        this.listBoxClientes.Items.Add(c);
-                    }
-                    
+                    libreria.clientes= ClaseSerializadora<List<Cliente>>.Leer("Clientes");
+                    this.listBoxClientes.DataSource = libreria.clientes;
                     banderaCargaClientes = 1;
                     this.clientesToolStripMenuItem1.Enabled = true;
                     
@@ -522,11 +498,7 @@ namespace Vista
                 if (banderaCargaLibros == 0)
                 {
                     libreria.libros = LibroDAO.Cargar();
-                    foreach (Libro l in libreria.libros)
-                    {
-
-                        this.listBoxLibros.Items.Add(l);
-                    }
+                    this.listBoxLibros.DataSource = libreria.libros;
                     MessageBox.Show("Carga exitosa");
                     banderaCargaLibros = 1;
                 }

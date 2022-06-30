@@ -44,6 +44,10 @@ namespace Vista
             this.Close();
         }
 
-        
+        private void ProximosIngresos_MouseClick(object sender, MouseEventArgs e)
+        {
+            c.cancellationTokenSource.Cancel();
+           // this.Close();
+        }
     }
 }

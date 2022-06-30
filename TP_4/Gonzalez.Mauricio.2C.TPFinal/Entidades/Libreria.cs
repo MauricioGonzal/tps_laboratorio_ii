@@ -48,6 +48,24 @@ namespace Entidades
             return sb.ToString();
         }
 
+        public static int OrdenarLibros(Libro l1, Libro l2)
+        {
+            return string.Compare(l1.Nombre, l2.Nombre);
+        }
+
+        public static int OrdenarClientes(Cliente l1, Cliente l2)
+        {
+            int retorno= string.Compare(l1.Nombre, l2.Nombre);
+            if(retorno != 0)
+            {
+                return retorno;
+            }
+            else 
+            {
+                return string.Compare(l1.Apellido, l2.Apellido);    
+            }
+        }
+
         /// <summary>
         /// Verifica si el libro que se quiere registrar ya existe en la libreria
         /// </summary>

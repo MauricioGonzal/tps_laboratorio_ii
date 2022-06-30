@@ -34,11 +34,19 @@ namespace Entidades
             {
                 foreach (Libro libro in l)
                 {
-                    emc(libro.ToString());
-                    Thread.Sleep(2000);
+                    if (!cancellationToken.IsCancellationRequested)
+                    {
+                        emc(libro.ToString());
+                        Thread.Sleep(2000);
+                    }
+                    else
+                    {
+                        return;
+                    }
+                    
                 }
             }
-            while(!cancellationToken.IsCancellationRequested);
+            while(true);
             
         }
 

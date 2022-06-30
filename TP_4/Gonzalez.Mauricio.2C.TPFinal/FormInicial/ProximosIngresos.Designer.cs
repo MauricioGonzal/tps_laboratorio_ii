@@ -56,6 +56,7 @@
             this.MinimizeBox = false;
             this.Name = "ProximosIngresos";
             this.Text = "Proximos Ingresos";
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ProximosIngresos_MouseClick);
             this.ResumeLayout(false);
 
         }
